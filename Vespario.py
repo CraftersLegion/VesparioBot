@@ -26,8 +26,8 @@ class Vespario(commands.Bot):
     async def on_ready(self):
         await self.change_presence(activity = discord.Activity(name = f'{self.prefix}help',type = 2))
         print('Logged in as')
-        print(self..user.name)
-        print(self..user.id)
+        print(self.user.name)
+        print(self.user.id)
         print('------')
 
     async def on_member_join(self, member):
