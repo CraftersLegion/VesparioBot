@@ -40,7 +40,7 @@ class Vespario(commands.Bot):
         elif isinstance(error, commands.BadArgument): return await ctx.send(embed = discord.Embed(title = 'The arguments given are invalid.', description = f'Need help with command arguments? Use **{self.prefix}help**.', colour = discord.Colour.red()))
         elif isinstance(error, commands.NotOwner): return await ctx.send(embed = discord.Embed(title = 'You aren\'t allowed to do that.', colour = discord.Colour.red())) 
         elif isinstance(error, commands.CommandNotFound): pass
-        else:print(e)
+        else:print(error)
 
     async def on_message(self, message):
         if message.author.bot: return
