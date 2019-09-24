@@ -17,6 +17,6 @@ class Admin:
     async def announce(self, ctx, *, message):
         await ctx.message.delete()
         channel = self.bot.get_channel(554496970266378240)
-        await channel.send(embed=discord.Embed(title = 'Announcement!', description = m, colour = discord.Colour.blurple()))
+        await channel.send(embed=discord.Embed(title = 'Announcement!', description = message, colour = discord.Colour.blurple()))
 
 def setup(bot): bot.add_cog(Admin(bot))
