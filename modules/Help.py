@@ -25,6 +25,6 @@ class Help(commands.Cog):
             
             else: page = await HelpPaginator.from_cog(ctx, entry)
         
-        await p.paginate()
+        await page.paginate()
 
 def setup(bot): bot.add_cog(Help(bot))
