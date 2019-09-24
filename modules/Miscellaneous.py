@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 import datetime
 
-class Miscellaneous:
+class Miscellaneous(commands.Cog):
 	def __init__(self, bot): self.bot = bot
 
 	async def on_ready(self): self.uptime = datetime.datetime.utcnow()
@@ -33,5 +33,9 @@ class Miscellaneous:
 
 		await channel.send(embed=discord.Embed(title = 'New Suggestion!', description = f'{ctx.author} suggests **{suggestion}**.', colour = discord.Colour.blurple()))
 		await ctx.send(embed=discord.Embed(title='Your suggestion was noted! **Thank you!**', description = 'Abuse of this system will result in a punishment to be decided by the staff team.', colour = discord.Colour.green()))
+
+	@commands.command()
+	async def apply(self, ctx):
+		await ctx.send('This feature is coming soon. You\'ll have to wait until then!')
 	
 def setup(bot):bot.add_cog(Miscellaneous(bot))

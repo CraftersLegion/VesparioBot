@@ -1,5 +1,6 @@
 import asyncio
 import discord
+
 class Pages:
     def __init__(self, ctx, *, entries, per_page = 12, show_entry_count = True):
         self.bot      = ctx.bot
