@@ -21,11 +21,6 @@ class Miscellaneous(commands.Cog):
 		else: format = f'**{hours}** hour{h}, **{minutes}** minute{m} and **{seconds}** second{s}'
 		return format
 
-	@commands.command()
-	async def donate(self, ctx):
-		'''Donate to help the network be the best it can be!'''
-		await ctx.send(embed = discord.Embed(title = '**Click me** to get my donation link!', url = 'https://donatebot.io/checkout/536506218945052692?buyer=257575046288113665', description = 'Those who donate help progress the development of Haven Realms and receive a shiny boosted role to show off your support!', colour = discord.Colour.blurple()))
-
 	@commands.command(aliases = ['suggestion', 'feedback'])
 	async def suggest(self, ctx, *, suggestion):
 		'''Leave a suggestion!'''

@@ -25,7 +25,10 @@ class Vespario(commands.Bot):
 
     async def on_ready(self):
         await self.change_presence(activity = discord.Activity(name = f'{self.prefix}help',type = 2))
-        print('Vespario is ready to go!')
+        print('Logged in as')
+        print(self.user.name)
+        print(self.user.id)
+        print('------')
 
     async def on_member_join(self, member):
         channel = self.get_channel(557701504283181072)
