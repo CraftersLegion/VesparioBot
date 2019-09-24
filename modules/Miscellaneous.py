@@ -3,7 +3,10 @@ from discord.ext import commands
 import datetime
 
 class Miscellaneous(commands.Cog):
-	def __init__(self, bot): self.bot = bot
+	def __init__(self, bot):
+		
+		# Define Variables
+		self.bot = bot
 
 	async def on_ready(self): self.uptime = datetime.datetime.utcnow()
 
@@ -24,6 +27,7 @@ class Miscellaneous(commands.Cog):
 	@commands.command(aliases = ['suggestion', 'feedback'])
 	async def suggest(self, ctx, *, suggestion):
 		'''Leave a suggestion!'''
+		
 		channel = self.bot.get_channel(536507128320491530)
 
 		await channel.send(embed=discord.Embed(title = 'New Suggestion!', description = f'{ctx.author} suggests **{suggestion}**.', colour = discord.Colour.blurple()))
@@ -33,4 +37,4 @@ class Miscellaneous(commands.Cog):
 	async def apply(self, ctx):
 		await ctx.send('This feature is coming soon. You\'ll have to wait until then!')
 	
-def setup(bot):bot.add_cog(Miscellaneous(bot))
+def setup(bot): bot.add_cog(Miscellaneous(bot))

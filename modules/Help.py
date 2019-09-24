@@ -4,7 +4,10 @@ from modules.Paginator import HelpPaginator
 
 class Help(commands.Cog):
     def __init__(self,bot):
+
+        # Define Variables
         self.bot = bot
+
         bot.remove_command('help')
 
     @commands.command()

@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 
-class Admin:
+class Admin(commands.Cog):
     def __init__(self, bot):
         
         # Define Variables
@@ -15,9 +15,11 @@ class Admin:
         536507055402516510  # Admin
     ]
 
-    @commands.command(hidden = True)
+    @commands.command(hidden = True, aliases = ['broadcast'])
     @commands.has_any_role(admins)
     async def announce(self, ctx, *, message):
+        '''Broadcast an announcement to the announcement channel.'''
+
         await ctx.message.delete()
         channel = self.bot.get_channel(554496970266378240)
         await channel.send(embed=discord.Embed(title = 'Announcement!', description = message, colour = discord.Colour.blurple()))
