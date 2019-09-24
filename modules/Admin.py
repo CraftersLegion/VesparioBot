@@ -4,8 +4,8 @@ from discord.ext import commands
 class Admin:
     def __init__(self, bot):
     
-    # Define Variables
-    self.bot = bot
+        # Define Variables
+        self.bot = bot
     
     admins = [
         536507052558909461, # Network Owner
